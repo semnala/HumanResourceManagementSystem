@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper />
+<mapper namespace="">
+	<select id="" parameterType="" resultType="">
+		<![CDATA[
+			SELECT
+				ADM_ID,
+				ADM_LEVEL,
+				USE_YN
+			FROM HRMS_ADMIN_USER
+		]]>
+		<where>
+			<if test ="">
+				AND ADM_ID = #{adm_id}
+				AND ADM_PW = #{adm_pw}
+			</if>
+		</where>
+	</select>
+	
+	<insert id="" parameterType="">
+	</insert>
+</mapper>
