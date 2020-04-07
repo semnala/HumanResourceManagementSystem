@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="">
-	<select id="" parameterType="" resultType="">
+<mapper namespace="com.miris.hrms.service.com.mapper.Com0101Mapper">
+	<select id="selectManagerInfo" parameterType="com.miris.hrms.service.com.vo.ManagerVO" resultType="com.miris.hrms.service.com.vo.ManagerVO">
 		<![CDATA[
 			SELECT
 				ADM_ID,
@@ -16,7 +16,4 @@
 			</if>
 		</where>
 	</select>
-	
-	<insert id="" parameterType="">
-	</insert>
 </mapper>
