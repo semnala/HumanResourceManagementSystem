@@ -6,16 +6,35 @@
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-    	<init-param>
-        	<param-name>encoding</param-name>
-        	<param-value>UTF-8</param-value>
-    	</init-param>        
-	</filter>
-	<filter-mapping>
+   	<init-param>
+       	<param-name>encoding</param-name>
+       	<param-value>UTF-8</param-value>
+   	</init-param>        
+  </filter>
+  <filter-mapping>
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   
+  <!-- Request 래핑 클래스 적용한 필터 -->
+  <filter>
+  	<filter-name>readableRequestFilter</filter-name>
+  	<filter-class>com.miris.comm.preprocess.filter.MrsReadableRequestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>readableRequestFilter</filter-name>
+    <url-pattern>/service/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- Spring Security 필터 -->
+  <filter>
+  	<filter-name>springSecurityFilterChain</filter-name>
+  	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>springSecurityFilterChain</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
   <!-- 웹 어플리케이션이 시작되는 시점에 ApplicationContext을 로딩하며, 로딩된 빈정보는 모든 WebApplicationContext들이 참조할 수 있다.-->
   <listener>
@@ -23,7 +42,7 @@
   </listener>
   
   <listener>
-    <listener-class>com.miris.preprocess.session.MirSessionListener</listener-class>
+    <listener-class>com.miris.comm.preprocess.session.MrsSessionListener</listener-class>
   </listener>
   
   <!-- ApplicationContext 빈 설정 파일-->
@@ -32,7 +51,7 @@
       <!--빈 설정 파일들간에 구분은 줄바꿈(\n),컴마(,),세미콜론(;)등으로 한다.-->
       <param-value>/WEB-INF/config/context-*.xml</param-value>
   </context-param>
-  
+    
   <!--  
   servlet-name은 DispatcherServlet이 기본(default)으로 참조할 빈 설정 파일 이름의 prefix가 되는데, (servlet-name)-servlet.xml 같은 형태 
     빈 설정 파일의 이름과 경로를 직접 지정해주고 싶다면 contextConfigLocation 라는 초기화 파라미터 값에 빈 설정 파일 경로를 설정해준다. 
