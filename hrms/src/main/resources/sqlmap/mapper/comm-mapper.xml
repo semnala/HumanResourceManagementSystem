@@ -16,4 +16,16 @@
 			</if>
 		</where>
 	</select>
+	
+	<update id="updateLoginDate" parameterType="String">
+		<![CDATA[
+			UPDATE HRMS_ADMIN_USER
+			   SET LOGIN_DATE = TO_CHAR(SYSDATE ,'YYYYMMDDHH24MISS')
+		]]>
+		<where>
+			<if test ="">
+			   AND ADM_ID = #{id}
+			</if>
+		</where>
+	</update>
 </mapper>
