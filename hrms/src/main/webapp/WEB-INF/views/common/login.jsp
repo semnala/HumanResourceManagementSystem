@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,7 +41,7 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-    
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -61,12 +61,12 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<form class="form-signin">
+	<form class="form-signin" method="post">
   	<h1 class="h3 mb-3 font-weight-normal">Human Resource Management System</h1>
   	<label for="inputEmail" class="sr-only">Email address</label>
-  	<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  	<input type="text" id="id" name="id" class="form-control" placeholder="Email address" required autofocus>
   	<label for="inputPassword" class="sr-only">Password</label>
-  	<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  	<input type="password" id="passwd" name="passwd" class="form-control" placeholder="Password" required>
   		<div class="checkbox mb-3">
     	<label>
       		<input type="checkbox" value="remember-me"> 아이디 저장
