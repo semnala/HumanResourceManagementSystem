@@ -8,4 +8,6 @@ import com.miris.hrms.service.com.vo.ManagerVO;
  */
 public interface Com0101Service {
 	public boolean userLoginIn(ManagerVO manager) throws Exception;
+	
+
 }
